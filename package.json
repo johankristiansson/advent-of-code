@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "@types/node": "^8.0.53",
+    "typescript": "^2.6.2"
+  },
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "main": "./build/index.js",
+  "repository": "https://github.com/johankristiansson/advent-of-code",
+  "author": "Johan Kristiansson <johan1kristiansson@gmail.com>",
+  "license": "MIT",
+  "dependencies": {}
+}
