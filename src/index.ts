@@ -1,3 +1,5 @@
+import * as fs from "fs";
+import * as path from "path";
 import * as Dec1T1 from "./dec1/t1";
 import * as Dec1T2 from "./dec1/t2";
 import * as Dec2T1 from "./dec2/t1";
@@ -27,13 +29,14 @@ go();
 function go() {
 
     if (process.argv.length < 4) {
-        console.log("error");
+        console.log("Error - invalid arguments");
         return;
     }
 
     const task = process.argv[2];
-    const input = process.argv[3];
-    
+    const inputArg = process.argv[3];
+
+    const input = fs.existsSync(inputArg) ? fs.readFileSync(inputArg).toString() : inputArg;
     calculate(task, input);
 }
 
