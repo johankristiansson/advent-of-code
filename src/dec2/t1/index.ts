@@ -1,4 +1,4 @@
-export function go(rawInput: string) {
+export function go(rawInput: string): number {
     const input = rawInput.split("\n").map(r => r.split("\t").map(r => parseInt(r)));
 
     return input.reduce((a, b) => {
