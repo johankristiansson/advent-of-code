@@ -1,4 +1,4 @@
-# advent-of-code
+# Advent of code 2017 🎅🏻
 
 ## Setup
 `yarn install`
