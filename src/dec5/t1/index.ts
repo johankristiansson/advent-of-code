@@ -7,8 +7,7 @@ function runInstructions(instructions: Array<number>): number{
     let steps = 0;
     let index = 0;
     while(index < instructions.length) {
-        index += instructions[index];
-        instructions[index]++;
+        index += instructions[index]++;
         steps++;
     }
     return steps;
