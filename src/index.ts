@@ -1,3 +1,5 @@
+import * as fs from "fs";
+import * as path from "path";
 import * as Dec1T1 from "./dec1/t1";
 import * as Dec1T2 from "./dec1/t2";
 import * as Dec2T1 from "./dec2/t1";
@@ -10,6 +12,14 @@ import * as Dec5T1 from "./dec5/t1";
 import * as Dec5T2 from "./dec5/t2";
 import * as Dec6T1 from "./dec6/t1";
 import * as Dec6T2 from "./dec6/t2";
+import * as Dec7T1 from "./dec7/t1";
+import * as Dec7T2 from "./dec7/t2";
+import * as Dec8T1 from "./dec8/t1";
+import * as Dec8T2 from "./dec8/t2";
+import * as Dec9T1 from "./dec9/t1";
+import * as Dec9T2 from "./dec9/t2";
+import * as Dec10T1 from "./dec10/t1";
+import * as Dec10T2 from "./dec10/t2";
 
 const calender: { [key: string]: (input: string) => any } = {
     "dec1-t1": (input: string) => Dec1T1.go(input),
@@ -24,6 +34,14 @@ const calender: { [key: string]: (input: string) => any } = {
     "dec5-t2": (input: string) => Dec5T2.go(input),
     "dec6-t1": (input: string) => Dec6T1.go(input),
     "dec6-t2": (input: string) => Dec6T2.go(input),
+    "dec7-t1": (input: string) => Dec7T1.go(input),
+    "dec7-t2": (input: string) => Dec7T2.go(input),
+    "dec8-t1": (input: string) => Dec8T1.go(input),
+    "dec8-t2": (input: string) => Dec8T2.go(input),
+    "dec9-t1": (input: string) => Dec9T1.go(input),
+    "dec9-t2": (input: string) => Dec9T2.go(input),
+    "dec10-t1": (input: string) => Dec10T1.go(input),
+    "dec10-t2": (input: string) => Dec10T2.go(input),
 };
 
 go();
@@ -31,13 +49,14 @@ go();
 function go() {
 
     if (process.argv.length < 4) {
-        console.log("error");
+        console.log("Error - invalid arguments");
         return;
     }
 
     const task = process.argv[2];
-    const input = process.argv[3];
-    
+    const inputArg = process.argv[3];
+
+    const input = fs.existsSync(inputArg) ? fs.readFileSync(inputArg).toString() : inputArg;
     calculate(task, input);
 }
 
