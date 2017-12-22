@@ -34,6 +34,7 @@ import * as Dec16T1 from "./dec16/t1";
 import * as Dec16T2 from "./dec16/t2";
 import * as Dec17T1 from "./dec17/t1";
 import * as Dec17T2 from "./dec17/t2";
+import * as Dec18T1 from "./dec18/t1";
 
 const calender: { [key: string]: (input: string) => any } = {
     "dec1-t1": (input: string) => Dec1T1.go(input),
@@ -70,6 +71,7 @@ const calender: { [key: string]: (input: string) => any } = {
     "dec16-t2": (input: string) => Dec16T2.go(input),
     "dec17-t1": (input: string) => Dec17T1.go(input),
     "dec17-t2": (input: string) => Dec17T2.go(input),
+    "dec18-t1": (input: string) => Dec18T1.go(input),
 };
 
 go();
