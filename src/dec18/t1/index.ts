@@ -193,7 +193,7 @@ function reduce(state: State, action: Command): State {
             pointer: state.pointer + 1
           };
     case "jump":
-      const jump = state.register[action.register] || 0;
+      const jump = getValue(action.register, state.register) > 0;
       return jump
         ? {
             ...state,
